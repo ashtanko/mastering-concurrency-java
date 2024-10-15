@@ -1,20 +1,44 @@
 # Mastering concurrency in Java
 
-Content:
+# fill readme
+# Mastering concurrency in Java
 
-# concepts
-1. Java Memory Model
-2. Monitor
-3. Atomic field assignment
-4. Race condition
-5. Data race
-6. Safe publication
-7. Final fields
-8. TODO
+## Introduction
 
-## Deadlock
-Deadlock occurs when multiple threads need the same locks but obtain them in different order.
+This project aims to provide a comprehensive understanding of concurrency in Java. Whether you're a beginner or an experienced developer, this guide will help you master the concepts of concurrency and parallelism in Java.
 
-## Livelock
-Livelock is another concurrency problem and is similar to deadlock. 
-In livelock, two or more threads keep on transferring states between one another instead of waiting infinitely.
+## Getting Started
+
+### Prerequisites
+
+- Java 8 or higher
+- A compatible IDE (e.g., IntelliJ IDEA, Eclipse)
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone
+```
+
+## Key Concepts
+
+- Threads
+- Synchronization
+- Atomic Variables
+- Barrier Synchronization
+- Callable and Future
+- Concurrency Issues
+- Concurrency Collections
+- Daemon Threads
+- Deadlocks
+- Executors
+- Immutable Objects
+- Inter thread Communication
+- Locks
+- Monitor
+- Concurrency Problems
+- Reentrant Locks
+- Semaphores
+- Sharing Objects
