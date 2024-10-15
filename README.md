@@ -1,8 +1,5 @@
 # Mastering concurrency in Java
 
-# fill readme
-# Mastering concurrency in Java
-
 ## Introduction
 
 This project aims to provide a comprehensive understanding of concurrency in Java. Whether you're a beginner or an experienced developer, this guide will help you master the concepts of concurrency and parallelism in Java.
