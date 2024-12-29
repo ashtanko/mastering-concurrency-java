@@ -25,7 +25,7 @@ public class WaitNotifyExample<E> {
     }
 
     public synchronized void consume() throws InterruptedException {
-        while (data.size() == 0) {
+        while (data.isEmpty()) {
             wait();
         }
         Thread.sleep(100);

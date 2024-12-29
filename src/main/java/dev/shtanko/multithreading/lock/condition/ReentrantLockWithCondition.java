@@ -29,7 +29,7 @@ public class ReentrantLockWithCondition {
     public String popFromStack() throws InterruptedException {
         try {
             lock.lock();
-            while (stack.size() == 0) {
+            while (stack.isEmpty()) {
                 stackEmptyCondition.await();
             }
             return stack.pop();

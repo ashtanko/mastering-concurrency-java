@@ -27,10 +27,10 @@ public class VisitCounter {
         var counter = new VisitCounter();
         var threadPool = Executors.newCachedThreadPool();
         for (int i = 1; i <= 500_000; i++) {
-            threadPool.execute(() -> counter.increase());
+            threadPool.execute(counter::increase);
         }
         for (int i = 1; i <= 500_000; i++) {
-            threadPool.execute(() -> counter.decrease());
+            threadPool.execute(counter::decrease);
         }
         threadPool.shutdown();
         System.out.println(counter.actualValue()); // should be zero
