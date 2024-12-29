@@ -1,17 +1,18 @@
 package dev.shtanko.multithreading.lock.condition;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ReentrantLockWithCondition {
 
-    Stack<String> stack = new Stack<>();
     private static final int CAPACITY = 5;
 
-    ReentrantLock lock = new ReentrantLock();
-    Condition stackEmptyCondition = lock.newCondition();
-    Condition stackFullCondition = lock.newCondition();
+    private final Deque<String> stack = new LinkedList<>();
+    private final ReentrantLock lock = new ReentrantLock();
+    private final Condition stackEmptyCondition = lock.newCondition();
+    private final Condition stackFullCondition = lock.newCondition();
 
     public void pushToStack(String item) throws InterruptedException {
         try {
@@ -37,5 +38,13 @@ public class ReentrantLockWithCondition {
             stackFullCondition.signalAll();
             lock.unlock();
         }
+    }
+
+    public int size() {
+        return stack.size();
+    }
+
+    public boolean isEmpty() {
+        return stack.isEmpty();
     }
 }

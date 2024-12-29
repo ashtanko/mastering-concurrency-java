@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class ReentrantLockWithConditionTest {
     @Test
@@ -39,7 +40,7 @@ class ReentrantLockWithConditionTest {
 
         // Allow time for the thread to block
         Thread.sleep(100);
-        assertEquals(5, lockWithCondition.stack.size());
+        assertEquals(5, lockWithCondition.size());
 
         // Pop one item to free space
         assertEquals("Item4", lockWithCondition.popFromStack());
@@ -48,7 +49,7 @@ class ReentrantLockWithConditionTest {
         executor.shutdown();
         executor.awaitTermination(1, TimeUnit.SECONDS);
 
-        assertEquals(5, lockWithCondition.stack.size());
+        assertEquals(5, lockWithCondition.size());
         assertEquals("ExtraItem", lockWithCondition.popFromStack());
     }
 
@@ -104,6 +105,6 @@ class ReentrantLockWithConditionTest {
         executor.shutdown();
         executor.awaitTermination(2, TimeUnit.SECONDS);
 
-        assertFalse(lockWithCondition.stack.isEmpty());
+        assertFalse(lockWithCondition.isEmpty());
     }
 }
