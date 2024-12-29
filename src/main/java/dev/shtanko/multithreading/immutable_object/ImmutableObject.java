@@ -2,6 +2,7 @@ package dev.shtanko.multithreading.immutable_object;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public final class ImmutableObject {
     private final int id;
@@ -22,8 +23,7 @@ public final class ImmutableObject {
     /**
      * Accessor function for mutable objects
      */
-    public HashMap<String, String> getTestMap() {
-        //return testMap;
+    public Map<String, String> getTestMap() {
         return (HashMap<String, String>) testMap.clone();
     }
 
@@ -35,7 +35,7 @@ public final class ImmutableObject {
      * @param hm map
      */
 
-    public ImmutableObject(int i, String n, HashMap<String, String> hm) {
+    public ImmutableObject(int i, String n, Map<String, String> hm) {
         System.out.println("Performing Deep Copy for Object initialization");
         this.id = i;
         this.name = n;

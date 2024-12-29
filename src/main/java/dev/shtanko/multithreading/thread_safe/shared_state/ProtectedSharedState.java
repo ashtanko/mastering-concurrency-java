@@ -3,9 +3,6 @@ package dev.shtanko.multithreading.thread_safe.shared_state;
 import dev.shtanko.multithreading.GuardedBy;
 import dev.shtanko.multithreading.ThreadSafe;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
 /**
  * Pattern: Protected Shared State
  * <p>
@@ -31,7 +28,6 @@ public class ProtectedSharedState {
     private Object state2;
 
     public synchronized Object getState() {
-        new LinkedHashMap<>()
         return state;
     }
 
